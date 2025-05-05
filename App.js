@@ -31,7 +31,12 @@ export default function App() {
   // Renderizado condicional:
   // Mostrar una pantalla en blanco mientras se carga
   if (isLoading) {
-    return null;
+    return (
+      <Image 
+      source={require('./assets/splash.png')} 
+      style={{ width: '100%', height: '100%' }}
+      resizeMode="contain"/>
+    );
   }
 
   return (
