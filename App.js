@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
+import Texto from './components/texto';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,7 +43,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <Text>Aguante react</Text>
+      <Texto texto="skibidi react"></Texto>
     </View>
   );
 }
