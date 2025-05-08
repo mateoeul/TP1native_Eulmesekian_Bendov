@@ -4,6 +4,8 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import Texto from './components/texto';
 
+import { TextInput, Button, ScrollView, Pressable } from 'react-native-web';
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,7 +18,7 @@ export default function App() {
           // Por ejemplo precarga de Fonts, llamadas a APIs externas, etc...
 
           // Simular una demora de 5 segundos.
-          await new Promise(resolve => setTimeout(resolve, 5000));
+          await new Promise(resolve => setTimeout(resolve, 1000));
       } catch (e) {
           console.warn(e);
       } finally {
@@ -44,6 +46,33 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Texto texto="skibidi react"></Texto>
+      <ScrollView>
+        <Texto texto="skibidi react"></Texto>
+        <Texto texto="skibidi react"></Texto>
+        <Texto texto="skibidi react"></Texto>
+        <Texto texto="skibidi react"></Texto>
+        <Texto texto="skibidi react"></Texto>
+        <Texto texto="skibidi react"></Texto>
+        <Texto texto="skibidi react"></Texto>
+    </ScrollView>
+    
+      <TextInput placeholder="Ingrese algo"
+        style={{ borderWidth: 1, padding: 10, margin: 20 }}
+      />
+
+      <Button title="Tocame" />
+      <Pressable
+        onPress={() => Alert.alert('Tocado!')}
+        style={{
+          border: "1px solid black",
+          padding: 10,
+          margin: 20,
+          borderRadius: 5,
+        }}
+      >
+      <Text>Presioname</Text>
+    </Pressable>
+    
     </View>
   );
 }
@@ -57,3 +86,6 @@ const styles = StyleSheet.create({
   },
   
 });
+
+
+
